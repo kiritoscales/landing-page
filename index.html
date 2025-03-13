@@ -24,7 +24,7 @@
       height: 100vh;
       display: flex;
       flex-direction: column;
-      justify-content: center;  /* Center content vertically */
+      justify-content: space-between; /* Ensures content is spaced with footer at the bottom */
       align-items: center;
       text-align: center;
       padding: 40px 20px;
@@ -53,7 +53,7 @@
     }
 
     header img {
-      width: 100px;  /* Smaller logo size */
+      width: 50px;  /* Half the size of the previous logo */
       height: auto;
     }
 
@@ -66,6 +66,7 @@
       flex: 1;
       opacity: 0;
       animation: fadeIn 3s forwards;
+      margin-top: 40px; /* Adjust spacing from the top */
     }
 
     /* ========== HEADINGS ========== */
@@ -93,6 +94,11 @@
     footer {
       font-size: 14px;
       color: #666;
+      margin-top: 30px;
+      position: absolute;
+      bottom: 20px; /* Ensures footer is at the bottom */
+      width: 100%; /* Full width */
+      text-align: center;
     }
 
     /* ========== INPUT & BUTTON WRAPPER ========== */
