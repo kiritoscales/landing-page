@@ -91,9 +91,10 @@
       align-items: center;
       justify-content: center;
       background-color: white;
-      border-radius: 10px; /* Less rounded corners */
-      padding: 5px 10px;
-      width: 300px;
+      border-radius: 8px; /* Less rounded corners */
+      padding: 3px 15px;
+      width: 400px; /* Wider input box */
+      height: 40px; /* Thinner input box */
       max-width: 90%;
       margin-top: 20px; /* Slightly reduced to push up */
     }
@@ -103,10 +104,11 @@
       flex: 1;
       border: none;
       outline: none;
-      padding: 12px;
       font-size: 16px;
-      border-radius: 10px;
+      border-radius: 8px;
       color: #000;
+      height: 100%; /* Match container height */
+      padding-left: 10px;
     }
 
     input[type="email"]::placeholder {
