@@ -21,7 +21,7 @@
       height: 100vh;
       display: flex;
       flex-direction: column;
-      justify-content: space-between; /* Maintains space distribution */
+      justify-content: space-between;
       align-items: center;
       text-align: center;
       padding: 20px 20px;
@@ -31,7 +31,7 @@
     header {
       font-size: 28px;
       font-weight: bold;
-      margin-bottom: 20px; /* Equal spacing to footer */
+      margin-bottom: 10px; /* Reduced to match footer, accounting for logo space */
     }
 
     header img {
@@ -39,6 +39,7 @@
       height: auto;
       opacity: 0;
       animation: fadeIn 3s forwards;
+      vertical-align: middle; /* Helps align logo text if present */
     }
 
     /* ========== MAIN CONTENT ========== */
@@ -49,7 +50,7 @@
       align-items: center;
       opacity: 0;
       animation: fadeIn 3s forwards;
-      margin-top: 0; /* Reset to allow flex to handle spacing */
+      margin-top: 0;
     }
 
     /* ========== HEADINGS ========== */
@@ -76,7 +77,7 @@
     footer {
       font-size: 12px;
       color: #666;
-      margin-top: 20px; /* Equal spacing to header */
+      margin-top: 10px; /* Match header margin for equal spacing */
     }
 
     /* ========== INPUT & BUTTON WRAPPER ========== */
