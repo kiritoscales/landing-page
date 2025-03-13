@@ -30,35 +30,14 @@
       padding: 40px 20px;
     }
 
-    /* ========== FONT IMPORT (LOCAL FONT) ========== */
-    @font-face {
-      font-family: 'SF Pro Display';
-      src: url('./Fonts/SFPRODISPLAYBLACKITALIC.OTF') format('opentype');
-      font-weight: 500;
-      font-style: italic;
-    }
-
-    @font-face {
-      font-family: 'SF Pro Display';
-      src: url('./Fonts/SFPRODISPLAYBOLD.OTF') format('opentype');
-      font-weight: 300;
-      font-style: normal;
-    }
-
     /* ========== HEADER ========== */
     header {
-      font-size: 28px;
-      font-weight: bold;
-      margin: 0;
-      position: absolute;
-      top: 20px; /* Set to a fixed distance from the top */
-      left: 20px; /* Align left */
+      margin-top: 20px;
     }
 
     header img {
-      width: 60px;  /* Adjusted logo size */
+      width: 100px; /* Reverting to the previous size */
       height: auto;
-      display: block; /* Ensure it displays properly */
     }
 
     /* ========== MAIN CONTENT ========== */
@@ -70,13 +49,12 @@
       flex: 1;
       opacity: 0;
       animation: fadeIn 3s forwards;
-      margin-top: 100px; /* Adjusted margin for content space */
     }
 
     /* ========== HEADINGS ========== */
     h1 {
       font-family: 'SF Pro Display', sans-serif;
-      font-size: 48px;
+      font-size: 58px;
       font-weight: 300;
       font-style: normal;
       margin-bottom: 20px;
@@ -88,21 +66,16 @@
     }
 
     h2 {
-      font-size: 28px;
+      font-size: 34px;
       font-style: italic;
       font-weight: 300;
-      margin-top: 10px;
     }
 
     /* ========== FOOTER ========== */
     footer {
-      font-size: 12px;
+      font-size: 14px;
       color: #666;
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      text-align: center;
-      margin-bottom: 0;
+      margin-bottom: 10px;
     }
 
     /* ========== INPUT & BUTTON WRAPPER ========== */
@@ -113,7 +86,7 @@
       background-color: white;
       border-radius: 30px;
       padding: 5px 10px;
-      width: 300px;
+      width: 350px;
       max-width: 90%;
       margin-top: 30px;
     }
