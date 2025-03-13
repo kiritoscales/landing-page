@@ -1,134 +1,168 @@
-/* ========== GLOBAL STYLES ========== */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-  color: #e0e0e0;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Kirito</title>
 
-body {
-  background-color: #000;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  text-align: center;
-  padding: 20px 20px;
-}
+  <style>
+    /* ========== GLOBAL STYLES ========== */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      color: #e0e0e0;
+    }
 
-/* ========== HEADER ========== */
-header {
-  font-size: 28px;
-  font-weight: bold;
-  margin-top: 10px;
-}
+    body {
+      background-color: #000;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      padding: 20px 20px;
+    }
 
-header img {
-  width: 50px;
-  height: auto;
-}
+    /* ========== HEADER ========== */
+    header {
+      font-size: 28px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
 
-/* ========== MAIN CONTENT ========== */
-main {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  flex: 1;
-  opacity: 0;
-  animation: fadeIn 3s forwards;
-  margin-top: 20px;
-}
+    header img {
+      width: 50px;
+      height: auto;
+    }
 
-/* ========== HEADINGS ========== */
-h1 {
-  font-size: 48px;
-  font-weight: 300;
-  font-style: normal;
-  margin-bottom: 15px;
-  line-height: 1.2;
-  background: linear-gradient(180deg, #8e8e9e 0%, #ffffff 30%, #ffffff 60%,  #9193a2 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
+    /* ========== MAIN CONTENT ========== */
+    main {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      flex: 1;
+      opacity: 0;
+      animation: fadeIn 3s forwards;
+      margin-top: 20px;
+    }
 
-h2 {
-  font-size: 28px;
-  font-style: italic;
-  font-weight: 300;
-  margin-top: 5px;
-}
+    /* ========== HEADINGS ========== */
+    h1 {
+      font-size: 48px;
+      font-weight: 300;
+      font-style: normal;
+      margin-bottom: 15px;
+      line-height: 1.2;
+      background: linear-gradient(180deg, #8e8e9e 0%, #ffffff 30%, #ffffff 60%,  #9193a2 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
 
-/* ========== FOOTER ========== */
-footer {
-  font-size: 12px;
-  color: #666;
-  position: absolute;
-  bottom: 5px;
-  width: 100%;
-  text-align: center;
-}
+    h2 {
+      font-size: 28px;
+      font-style: italic;
+      font-weight: 300;
+      margin-top: 5px;
+    }
 
-/* ========== INPUT & BUTTON WRAPPER ========== */
-.input-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: white;
-  border-radius: 8px;
-  padding: 3px 10px;
-  width: 450px;
-  height: 35px;
-  max-width: 90%;
-  margin-top: 20px;
-  box-sizing: border-box;
-}
+    /* ========== FOOTER ========== */
+    footer {
+      font-size: 12px;
+      color: #666;
+      position: absolute;
+      bottom: 5px;
+      width: 100%;
+      text-align: center;
+    }
 
-/* ========== EMAIL INPUT ========== */
-input[type="email"] {
-  flex: 1;
-  border: none;
-  outline: none;
-  font-size: 16px;
-  color: #000;
-  height: 100%;
-  padding-left: 10px;
-  border-top-left-radius: 8px;
-  border-bottom-left-radius: 8px;
-  box-sizing: border-box;
-}
+    /* ========== INPUT & BUTTON WRAPPER ========== */
+    .input-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: white;
+      border-radius: 8px;
+      padding: 3px 10px;
+      width: 450px;
+      height: 35px;
+      max-width: 90%;
+      margin-top: 20px;
+      box-sizing: border-box; /* Ensure padding and border are included in width/height */
+    }
 
-input[type="email"]::placeholder {
-  color: #888;
-}
+    /* ========== EMAIL INPUT ========== */
+    input[type="email"] {
+      flex: 1;
+      border: none;
+      outline: none;
+      font-size: 16px;
+      color: #000;
+      height: 100%;
+      padding-left: 10px;
+      border-top-left-radius: 8px;
+      border-bottom-left-radius: 8px;
+      box-sizing: border-box; /* Ensure padding is included in width */
+    }
 
-/* ========== SUBMIT BUTTON ========== */
-.subscribe-button {
-  background-color: #4b4b4b;
-  border: none;
-  color: white;
-  font-size: 16px;
-  padding: 8px 20px;
-  cursor: pointer;
-  border-top-right-radius: 8px;
-  border-bottom-right-radius: 8px;
-  transition: background-color 0.3s ease;
-  box-sizing: border-box;
-}
+    input[type="email"]::placeholder {
+      color: #888;
+    }
 
-.subscribe-button:hover {
-  background-color: #333;
-}
+    /* ========== SUBMIT BUTTON ========== */
+    .subscribe-button {
+      background-color: #4b4b4b;
+      border: none;
+      color: white;
+      font-size: 16px;
+      padding: 8px 20px;
+      cursor: pointer;
+      border-top-right-radius: 8px;
+      border-bottom-right-radius: 8px;
+      transition: background-color 0.3s ease;
+      box-sizing: border-box; /* Ensure padding is included in width */
+    }
 
-/* ========== ANIMATION ========== */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
+    .subscribe-button:hover {
+      background-color: #333;
+    }
+
+    /* ========== ANIMATION ========== */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header>
+    <img src="Kirito_logo.jpeg" alt="Kirito Logo">
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <h1>Helping business owners<br>grow their brands.</h1>
+    <h2>Available soon.</h2>
+
+    <!-- EMAIL SUBSCRIBE FORM -->
+    <div class="input-wrapper">
+      <input type="email" placeholder="Enter your email">
+      <button class="subscribe-button" type="submit">Subscribe</button>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>&copy; 2025 Kirito Scales</footer>
+</body>
+</html>
