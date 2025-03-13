@@ -37,6 +37,8 @@
     header img {
       width: 50px;
       height: auto;
+      opacity: 0; /* Start with opacity 0 for fade-in */
+      animation: fadeIn 3s forwards; /* Apply fade-in animation */
     }
 
     /* ========== MAIN CONTENT ========== */
@@ -58,7 +60,7 @@
       font-style: normal;
       margin-bottom: 15px;
       line-height: 1.2;
-      background: linear-gradient(180deg, #8e8e9e 0%, #ffffff 30%, #ffffff 60%,  #9193a2 100%);
+      background: linear-gradient(180deg, #8e8e9e 0%, #ffffff 30%, #ffffff 60%, #9193a2 100%);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
