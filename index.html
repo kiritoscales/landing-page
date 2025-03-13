@@ -24,36 +24,21 @@
       height: 100vh;
       display: flex;
       flex-direction: column;
-      justify-content: space-between; /* Ensures content is spaced with footer at the bottom */
+      justify-content: space-between;
       align-items: center;
       text-align: center;
-      padding: 40px 20px;
-    }
-
-    /* ========== FONT IMPORT (LOCAL FONT) ========== */
-    @font-face {
-      font-family: 'SF Pro Display';
-      src: url('./Fonts/SFPRODISPLAYBLACKITALIC.OTF') format('opentype');
-      font-weight: 500;
-      font-style: italic;
-    }
-
-    @font-face {
-      font-family: 'SF Pro Display';
-      src: url('./Fonts/SFPRODISPLAYBOLD.OTF') format('opentype');
-      font-weight: 300;
-      font-style: normal;
+      padding: 20px 20px; /* Reduced padding to push content up */
     }
 
     /* ========== HEADER ========== */
     header {
       font-size: 28px;
       font-weight: bold;
-      margin-top: 20px;
+      margin-top: 10px; /* Slightly reduced margin */
     }
 
     header img {
-      width: 50px;  /* Half the size of the previous logo */
+      width: 50px;
       height: auto;
     }
 
@@ -66,16 +51,16 @@
       flex: 1;
       opacity: 0;
       animation: fadeIn 3s forwards;
-      margin-top: 40px; /* Adjust spacing from the top */
+      margin-top: 20px; /* Slightly reduced to push content up */
     }
 
     /* ========== HEADINGS ========== */
     h1 {
       font-family: 'SF Pro Display', sans-serif;
-      font-size: 48px;  /* Adjusted size */
+      font-size: 48px;
       font-weight: 300;
       font-style: normal;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
       line-height: 1.2;
       background: linear-gradient(180deg, #8e8e9e 0%, #ffffff 30%, #ffffff 60%,  #9193a2 100%);
       -webkit-background-clip: text;
@@ -84,20 +69,19 @@
     }
 
     h2 {
-      font-size: 28px;  /* Slightly smaller subheading */
+      font-size: 28px;
       font-style: italic;
       font-weight: 300;
-      margin-top: 10px;
+      margin-top: 5px; /* Reduced margin */
     }
 
     /* ========== FOOTER ========== */
     footer {
-      font-size: 14px;
+      font-size: 12px; /* Smaller copyright text */
       color: #666;
-      margin-top: 30px;
       position: absolute;
-      bottom: 20px; /* Ensures footer is at the bottom */
-      width: 100%; /* Full width */
+      bottom: 5px; /* Placed fully at the bottom */
+      width: 100%;
       text-align: center;
     }
 
@@ -107,11 +91,11 @@
       align-items: center;
       justify-content: center;
       background-color: white;
-      border-radius: 30px;
+      border-radius: 10px; /* Less rounded corners */
       padding: 5px 10px;
-      width: 300px;  /* Smaller input width */
+      width: 300px;
       max-width: 90%;
-      margin-top: 30px;
+      margin-top: 20px; /* Slightly reduced to push up */
     }
 
     /* ========== EMAIL INPUT ========== */
@@ -119,9 +103,9 @@
       flex: 1;
       border: none;
       outline: none;
-      padding: 12px;  /* Smaller padding */
+      padding: 12px;
       font-size: 16px;
-      border-radius: 30px;
+      border-radius: 10px;
       color: #000;
     }
 
@@ -171,7 +155,6 @@
 </head>
 
 <body>
-
   <!-- HEADER -->
   <header>
     <img src="Kirito_logo.jpeg" alt="Kirito Logo">
@@ -193,6 +176,5 @@
 
   <!-- FOOTER -->
   <footer>&copy; 2025 Kirito Scales</footer>
-
 </body>
 </html>
