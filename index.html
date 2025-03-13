@@ -87,14 +87,13 @@
       align-items: center;
       justify-content: space-between;
       background-color: white;
-      border-radius: 8px; /* Fully rounded on all sides */
-      padding: 3px 0 3px 10px; /* Left padding only for input */
+      border-radius: 8px;
+      padding: 3px;
       width: 450px;
       height: 35px;
       max-width: 90%;
       margin-top: 20px;
       box-sizing: border-box;
-      overflow: hidden; /* Ensure button doesn't overflow rounded edges */
     }
 
     /* ========== EMAIL INPUT ========== */
@@ -106,6 +105,10 @@
       color: #000;
       height: 100%;
       padding-left: 10px;
+      border-top-left-radius: 8px;
+      border-bottom-left-radius: 8px;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
       box-sizing: border-box;
     }
 
@@ -119,13 +122,15 @@
       border: none;
       color: white;
       font-size: 16px;
-      padding: 8px 20px;
+      padding: 0 20px;
       cursor: pointer;
-      border-radius: 0 8px 8px 0; /* Rounded only on the right side */
+      border-top-right-radius: 8px;
+      border-bottom-right-radius: 8px;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      height: 100%;
       transition: background-color 0.3s ease;
       box-sizing: border-box;
-      height: 100%; /* Match the height of the input-wrapper */
-      margin-left: 0; /* Remove any gap */
     }
 
     .subscribe-button:hover {
