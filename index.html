@@ -24,7 +24,7 @@
       height: 100vh;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: center;  /* Center content vertically */
       align-items: center;
       text-align: center;
       padding: 40px 20px;
@@ -33,27 +33,27 @@
     /* ========== FONT IMPORT (LOCAL FONT) ========== */
     @font-face {
       font-family: 'SF Pro Display';
-      src: url('./SFPRODISPLAYBLACKITALIC.OTF') format('opentype');
-      font-weight: 500; /* Adjust this based on your font file */
-      font-style: italic; /* It's an italic font */
+      src: url('./Fonts/SFPRODISPLAYBLACKITALIC.OTF') format('opentype');
+      font-weight: 500;
+      font-style: italic;
     }
 
     @font-face {
       font-family: 'SF Pro Display';
-      src: url('./SFPRODISPLAYBOLD.OTF') format('opentype');
-      font-weight: 300; /* Adjust this based on your font file */
-      font-style: normal; /* It's a normal font */
+      src: url('./Fonts/SFPRODISPLAYBOLD.OTF') format('opentype');
+      font-weight: 300;
+      font-style: normal;
     }
 
     /* ========== HEADER ========== */
     header {
-      font-size: 32px;
+      font-size: 28px;
       font-weight: bold;
       margin-top: 20px;
     }
 
     header img {
-      width: 150px;
+      width: 120px;  /* Smaller logo size */
       height: auto;
     }
 
@@ -64,21 +64,18 @@
       justify-content: center;
       align-items: center;
       flex: 1;
-
-      opacity: 0; /* Initially hidden for fade-in */
+      opacity: 0;
       animation: fadeIn 3s forwards;
     }
 
     /* ========== HEADINGS ========== */
     h1 {
       font-family: 'SF Pro Display', sans-serif;
-      font-size: 98px;
-      font-weight: 300; /* Matches the font-weight in @font-face */
-      font-style: normal; /* Matches @font-face */
+      font-size: 56px;  /* Adjusted size */
+      font-weight: 300;
+      font-style: normal;
       margin-bottom: 20px;
       line-height: 1.2;
-
-      /* ========== GRADIENT EFFECT ========== */
       background: linear-gradient(180deg, #8e8e9e 0%, #ffffff 30%, #ffffff 60%,  #9193a2 100%);
       -webkit-background-clip: text;
       background-clip: text;
@@ -86,9 +83,10 @@
     }
 
     h2 {
-      font-size: 50px;
+      font-size: 32px;  /* Slightly smaller subheading */
       font-style: italic;
       font-weight: 300;
+      margin-top: 10px;
     }
 
     /* ========== FOOTER ========== */
@@ -105,7 +103,7 @@
       background-color: white;
       border-radius: 30px;
       padding: 5px 10px;
-      width: 400px;
+      width: 350px;  /* Smaller input width */
       max-width: 90%;
       margin-top: 30px;
     }
@@ -115,15 +113,14 @@
       flex: 1;
       border: none;
       outline: none;
-      padding: 15px;
+      padding: 12px;  /* Smaller padding */
       font-size: 16px;
       border-radius: 30px;
-      color: #000; /* Black text inside the input */
+      color: #000;
     }
 
-    /* Optional: Change placeholder color */
     input[type="email"]::placeholder {
-      color: #888; /* Light gray placeholder text */
+      color: #888;
     }
 
     /* ========== SUBMIT BUTTON ========== */
@@ -164,7 +161,6 @@
         opacity: 1;
       }
     }
-
   </style>
 </head>
 
@@ -172,7 +168,6 @@
 
   <!-- HEADER -->
   <header>
-    <!-- The logo is now in the same folder as index.html -->
     <img src="Kirito_logo.jpeg" alt="Kirito Logo">
   </header>
 
