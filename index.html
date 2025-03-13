@@ -148,4 +148,136 @@
       position: fixed;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%) scale(0.
+      transform: translate(-50%, -50%) scale(0.8);
+      background-color: #1a1a1a;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+      text-align: center;
+      opacity: 0;
+      transition: transform 0.5s ease, opacity 0.5s ease;
+    }
+
+    .popup.show {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
+
+    .popup p {
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+
+    .popup button {
+      background-color: #4b4b4b;
+      border: none;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .popup button:hover {
+      background-color: #333;
+    }
+
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    .overlay.show {
+      opacity: 1;
+    }
+
+    /* ========== ANIMATION ========== */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header>
+    <img src="Kirito_logo.jpeg" alt="Kirito Logo">
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <h1>Helping business owners<br>grow their brands.</h1>
+    <h2>Available soon.</h2>
+
+    <!-- EMAIL SUBSCRIBE FORM -->
+    <form id="subscribe-form" action="https://formspree.io/f/xaneyzor" method="POST" class="input-wrapper" onsubmit="handleSubmit(event)">
+      <input type="email" name="email" placeholder="Enter your email" required>
+      <button class="subscribe-button" type="submit">Subscribe</button>
+    </form>
+  </main>
+
+  <!-- POP-UP -->
+  <div class="overlay" id="overlay"></div>
+  <div class="popup" id="popup">
+    <p>Thank you for subscribing!</p>
+    <button onclick="closePopup()">Close</button>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>© 2025 Kirito Scales</footer>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    const form = document.getElementById('subscribe-form');
+    const popup = document.getElementById('popup');
+    const overlay = document.getElementById('overlay');
+
+    function handleSubmit(event) {
+      event.preventDefault();
+
+      const formData = new FormData(form);
+
+      fetch(form.action, {
+        method: form.method,
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      })
+      .then(response => {
+        if (response.ok) {
+          popup.style.display = 'block';
+          overlay.style.display = 'block';
+          popup.classList.add('show');
+          overlay.classList.add('show');
+          form.reset();
+        } else {
+          throw new Error('Submission failed');
+        }
+      })
+      .catch(error => {
+        alert('There was an error. Please try again or check your internet connection.');
+      });
+    }
+
+    function closePopup() {
+      popup.style.display = 'none';
+      overlay.style.display = 'none';
+    }
+  </script>
+</body>
+</html>
