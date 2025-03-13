@@ -90,7 +90,7 @@
       justify-content: space-between;
       background-color: white;
       border-radius: 8px;
-      padding: 3px;
+      padding: 0; /* Removed padding to eliminate extra space */
       width: 450px;
       height: 35px;
       max-width: 90%;
@@ -106,7 +106,7 @@
       font-size: 16px;
       color: #000;
       height: 100%;
-      padding: 0 10px;
+      padding: 0 10px; /* Adjusted padding to fit snugly */
       border-top-left-radius: 8px;
       border-bottom-left-radius: 8px;
       border-top-right-radius: 0;
@@ -124,7 +124,7 @@
       border: none;
       color: white;
       font-size: 16px;
-      padding: 0 15px;
+      padding: 0 15px; /* Adjusted padding to match input */
       cursor: pointer;
       border-top-right-radius: 8px;
       border-bottom-right-radius: 8px;
@@ -137,6 +137,7 @@
       transition: background-color 0.3s ease;
       box-sizing: border-box;
       margin: 0;
+      border-left: 1px solid #fff; /* Optional: subtle divider */
     }
 
     .subscribe-button:hover {
