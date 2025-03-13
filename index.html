@@ -31,7 +31,7 @@
     header {
       font-size: 28px;
       font-weight: bold;
-      margin-bottom: 10px; /* Reduced to match footer, accounting for logo space */
+      margin-bottom: 10px;
     }
 
     header img {
@@ -39,7 +39,7 @@
       height: auto;
       opacity: 0;
       animation: fadeIn 3s forwards;
-      vertical-align: middle; /* Helps align logo text if present */
+      vertical-align: middle;
     }
 
     /* ========== MAIN CONTENT ========== */
@@ -50,7 +50,7 @@
       align-items: center;
       opacity: 0;
       animation: fadeIn 3s forwards;
-      margin-top: 0;
+      margin-top: -30px; /* Move the main content up to balance spacing */
     }
 
     /* ========== HEADINGS ========== */
@@ -58,7 +58,7 @@
       font-size: 48px;
       font-weight: 300;
       font-style: normal;
-      margin-bottom: 15px; /* Keep spacing between headline and "Available soon" */
+      margin-bottom: 15px;
       line-height: 1.2;
       background: linear-gradient(180deg, #8e8e9e 0%, #ffffff 30%, #ffffff 60%, #9193a2 100%);
       -webkit-background-clip: text;
@@ -70,14 +70,16 @@
       font-size: 28px;
       font-style: italic;
       font-weight: 300;
-      margin-bottom: 20px; /* Keep spacing between "Available soon" and email box */
+      margin-bottom: 20px;
     }
 
     /* ========== FOOTER ========== */
     footer {
       font-size: 12px;
       color: #666;
-      margin-top: 10px; /* Match header margin for equal spacing */
+      margin-top: 10px;
+      opacity: 0;
+      animation: fadeIn 3s forwards; /* Added fade-in animation */
     }
 
     /* ========== INPUT & BUTTON WRAPPER ========== */
@@ -146,13 +148,20 @@
       position: fixed;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%) scale(0.8); /* Start scaled down for animation */
       background-color: #1a1a1a;
       padding: 20px;
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
       z-index: 1000;
       text-align: center;
+      opacity: 0; /* Start invisible for animation */
+      transition: transform 0.5s ease, opacity 0.5s ease; /* Smooth transition */
+    }
+
+    .popup.show {
+      transform: translate(-50%, -50%) scale(1); /* Scale up to normal size */
+      opacity: 1; /* Fade in */
     }
 
     .popup p {
@@ -183,6 +192,12 @@
       height: 100%;
       background-color: rgba(0, 0, 0, 0.5);
       z-index: 999;
+      opacity: 0;
+      transition: opacity 0.5s ease; /* Fade in overlay */
+    }
+
+    .overlay.show {
+      opacity: 1;
     }
 
     /* ========== ANIMATION ========== */
@@ -247,6 +262,8 @@
         if (response.ok) {
           popup.style.display = 'block';
           overlay.style.display = 'block';
+          popup.classList.add('show'); /* Trigger pop-up animation */
+          overlay.classList.add('show'); /* Trigger overlay animation */
           form.reset();
         } else {
           throw new Error('Submission failed');
