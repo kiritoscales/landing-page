@@ -71,8 +71,8 @@
       font-size: 28px;
       font-style: italic;
       font-weight: 300;
-      margin-top: -5px; /* Reverted to the perfect spacing */
-      margin-bottom: 20px; /* Reverted to the perfect spacing */
+      margin-top: -5px;
+      margin-bottom: 20px;
     }
 
     /* ========== FOOTER ========== */
@@ -158,12 +158,12 @@
       z-index: 1000;
       text-align: center;
       opacity: 0;
-      transition: transform 0.5s ease, opacity 0.5s ease;
+      transition: opacity 0.5s ease;
     }
 
     .popup.show {
-      transform: translate(-50%, -50%) scale(1);
       opacity: 1;
+      animation: pop 0.5s ease forwards; /* Added pop animation */
     }
 
     .popup p {
@@ -202,13 +202,25 @@
       opacity: 1;
     }
 
-    /* ========== ANIMATION ========== */
+    /* ========== ANIMATIONS ========== */
     @keyframes fadeIn {
       from {
         opacity: 0;
       }
       to {
         opacity: 1;
+      }
+    }
+
+    @keyframes pop {
+      0% {
+        transform: translate(-50%, -50%) scale(0.8);
+      }
+      70% {
+        transform: translate(-50%, -50%) scale(1.05); /* Slight overshoot for bounce */
+      }
+      100% {
+        transform: translate(-50%, -50%) scale(1); /* Settle at normal size */
       }
     }
   </style>
