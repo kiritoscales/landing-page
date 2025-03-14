@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Kirito</title>
+  <title>Kirito Scales</title>
+  <link rel="icon" type="image/jpeg" href="Kirito_logo.jpeg"> <!-- Added favicon -->
 
   <style>
     /* ========== GLOBAL STYLES ========== */
@@ -70,8 +71,15 @@
       font-size: 28px;
       font-style: italic;
       font-weight: 300;
-      margin-top: -5px; /* Move "Available soon" up slightly */
-      margin-bottom: 20px; /* Adjust to maintain total spacing */
+      margin-top: -5px;
+      margin-bottom: 20px;
+    }
+
+    /* ========== COUNTDOWN TIMER ========== */
+    #countdown {
+      font-size: 18px;
+      color: #666;
+      margin-bottom: 20px;
     }
 
     /* ========== FOOTER ========== */
@@ -223,6 +231,7 @@
   <main>
     <h1>Helping business owners<br>grow their brands.</h1>
     <h2>Available soon.</h2>
+    <div id="countdown"></div>
 
     <!-- EMAIL SUBSCRIBE FORM -->
     <form id="subscribe-form" action="https://formspree.io/f/xaneyzor" method="POST" class="input-wrapper" onsubmit="handleSubmit(event)">
@@ -246,6 +255,28 @@
     const form = document.getElementById('subscribe-form');
     const popup = document.getElementById('popup');
     const overlay = document.getElementById('overlay');
+    const countdown = document.getElementById('countdown');
+
+    // Countdown Timer (set to April 13, 2025)
+    function updateCountdown() {
+      const launchDate = new Date("April 13, 2025 00:00:00").getTime();
+      const now = new Date().getTime();
+      const distance = launchDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      countdown.innerHTML = `Launching in: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+      if (distance < 0) {
+        countdown.innerHTML = "Launched!";
+      }
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
 
     function handleSubmit(event) {
       event.preventDefault();
